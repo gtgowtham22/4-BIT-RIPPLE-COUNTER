@@ -22,19 +22,63 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 ![image](https://github.com/naavaneetha/4-BIT-RIPPLE-COUNTER/assets/154305477/85e1958a-2fc1-49bb-9a9f-d58ccbf3663c)
 
-**Procedure**
+Procedure
 
-/* write all the steps invloved */
+Type the program in Quartus software.
 
-**PROGRAM**
+Compile and run the program.
 
-/* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
+Generate the RTL schematic and save the logic diagram.
 
- Developed by: RegisterNumber:
-*/
+Create nodes for inputs and outputs to generate the timing diagram.
 
-**RTL LOGIC FOR 4 Bit Ripple Counter**
+For different input combinations generate the timing diagram.
 
-**TIMING DIGRAMS FOR 4 Bit Ripple Counter**
+Program:
+```
+Program to design a full adder and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+Developed by: G.T.GOWTHAM
+RegisterNumber: 24901330
+Full Adder
 
-**RESULTS**
+module exp4(df,bo,a,b,bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+Full Subtractor
+
+module full_subtractor(diff, borrow, a, b, bin);
+  output diff;
+  output borrow;
+  input a;
+  input b;
+  input bin;
+  assign diff = a ^ b ^ bin;
+  assign borrow = (~a & b) | (~(a ^ b) & bin);
+endmodule
+```
+RTL Schematic Full Adder
+![12 1](https://github.com/user-attachments/assets/a343f20a-52bd-4968-b7c3-d0aea8f8dcee)
+
+Full Subtractor 
+
+![12 2](https://github.com/user-attachments/assets/82e6f70e-7896-4e5c-93ee-01ffeab385f7)
+
+Output Timing Waveform Full Adder
+![12 3](https://github.com/user-attachments/assets/dfa81746-0a9f-4998-b073-c5f963a63cfe)
+
+Full Subtractor 
+![12 4](https://github.com/user-attachments/assets/34c4f73a-78e9-455f-9eb1-71d082441d68)
+
+Result:
+
+Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
